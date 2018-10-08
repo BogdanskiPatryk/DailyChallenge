@@ -23,11 +23,10 @@ You can modify the input array in-place.
             }
             for (int i = 0; i < input.Length; ++i)
             {
-                if (input[i] == i + 1)
+                if (input[i] != i + 1)
                 {
-                    continue;
+                    return i + 1;
                 }
-                return i + 1;
             }
             return input.Length + 1;
         }
@@ -50,7 +49,7 @@ You can modify the input array in-place.
             }
             if (temp > 0 && temp <= input.Length)
             {
-                // Do not replace importent data
+                // Do not replace important data
                 CorrectValue(temp, input, tempIndex);
             }
             input[index] = value;
