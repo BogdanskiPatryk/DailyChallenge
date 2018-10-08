@@ -51,6 +51,7 @@
     <Compile Include="TestDailyChallenge0.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDailyChallenge1.cs" />
+    <Compile Include="TestDailyChallenge2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
