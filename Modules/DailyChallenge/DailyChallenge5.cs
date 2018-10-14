@@ -19,19 +19,17 @@ namespace DailyChallenge
 
         public void Add(int element)
         {
-            Node first = DereferencePointer(_firstAddress);
-            if (first == null)
+            Node newNode = new Node() { Element = element };
+            Node last = DereferencePointer(_lastAddress);
+            if (last == null)
             {
                 // First element
-                first = new Node() { Element = element, Both = 0 };
-                _firstAddress = GetPointer(first);
-                _lastAddress = _firstAddress;
-                return;
+                _firstAddress = GetPointer(newNode);
             }
-            // Add
-            Node newNode = new Node() { Element = element, Both = _lastAddress };
-            Node last = DereferencePointer(_lastAddress);
-            last.Both = _lastAddress ^ GetPointer(newNode);
+            else
+            {
+                last.Both = _lastAddress ^ GetPointer(newNode);
+            }
             _lastAddress = GetPointer(newNode);
         }
 
