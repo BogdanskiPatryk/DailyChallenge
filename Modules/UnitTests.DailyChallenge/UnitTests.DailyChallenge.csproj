@@ -57,6 +57,7 @@
     <Compile Include="TestDailyChallenge4.cs" />
     <Compile Include="TestDailyChallenge6.cs" />
     <Compile Include="TestDailyChallenge7.cs" />
+    <Compile Include="TestDailyChallenge8.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
