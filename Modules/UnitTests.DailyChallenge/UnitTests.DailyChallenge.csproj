@@ -51,6 +51,8 @@
     <Compile Include="TestDailyChallenge0.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestDailyChallenge1.cs" />
+    <Compile Include="TestDailyChallenge10.cs" />
+    <Compile Include="TestDailyChallenge11.cs" />
     <Compile Include="TestDailyChallenge2.cs" />
     <Compile Include="TestDailyChallenge3.cs" />
     <Compile Include="TestDailyChallenge5.cs" />

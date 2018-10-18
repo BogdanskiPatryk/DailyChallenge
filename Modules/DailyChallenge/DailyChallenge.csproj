@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="DailyChallenge0.cs" />
     <Compile Include="DailyChallenge1.cs" />
+    <Compile Include="DailyChallenge10.cs" />
+    <Compile Include="DailyChallenge11.cs" />
     <Compile Include="DailyChallenge2.cs" />
     <Compile Include="DailyChallenge3.cs" />
     <Compile Include="DailyChallenge4.cs" />
