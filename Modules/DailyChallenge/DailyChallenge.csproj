@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DailyChallenge16.cs" />
     <Compile Include="DailyChallenge0.cs" />
     <Compile Include="DailyChallenge1.cs" />
     <Compile Include="DailyChallenge10.cs" />
