@@ -32,7 +32,6 @@ namespace DailyChallenge
 
         public int[] Proceed(int[] input, int k)
         {
-            int[] uu = input.ToArray();
             if (k <= 0 || k > input.Length)
             {
                 throw new ArgumentOutOfRangeException();
@@ -68,11 +67,6 @@ namespace DailyChallenge
                 {
                     result[i] = input[i];
                     input[i + 1] = Math.Max(input[i + 1], input[i + k - 2]);
-                }
-
-                if (result[i] != uu.Skip(i).Take(k).Max())
-                {
-                    int y = 0;
                 }
             }
             return result;
