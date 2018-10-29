@@ -43,8 +43,6 @@ namespace UnitTests.DailyChallenge
             second.AddRange(common);
 
             Assert.AreEqual(common[0], daily.Proceed(new LinkedList<Element>(first), new LinkedList<Element>(second)));
-
-
         }
     }
 }

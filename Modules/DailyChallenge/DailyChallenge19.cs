@@ -30,24 +30,15 @@ Do this in O(M + N) time (where M and N are the lengths of the lists) and consta
         public Element Proceed(LinkedList<Element> first, LinkedList<Element> second)
         {
             int diff = Math.Abs(first.Count - second.Count);
-            LinkedList<Element> shortest,longest;
-            if (first.Count < second.Count)
-            {
-                shortest = first;
-                longest = second;
-            }
-            else
-            {
-                shortest = second;
-                longest = first;
-            }
-            Element match = null;
+            LinkedList<Element> shortest = first.Count < second.Count ? first : second;
+            LinkedList<Element> longest = first.Count >= second.Count ? first : second;
             LinkedListNode<Element> elementShort = shortest.First;
             LinkedListNode<Element> elementLongest = longest.First;
-            for(int i = 0; i< diff; i++)
+            for (int i = 0; i < longest.Count - shortest.Count; i++)
             {
                 elementLongest = elementLongest.Next;
             }
+            Element match = null;
             while (elementShort != null)
             {
                 if (elementShort.Value.ID == elementLongest.Value.ID)
@@ -65,7 +56,6 @@ Do this in O(M + N) time (where M and N are the lengths of the lists) and consta
                 elementLongest = elementLongest.Next;
             }
             return match;
-           
         }
     }
 }
