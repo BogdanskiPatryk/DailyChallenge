@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace UnitTests.DailyChallenge
 {
     [TestClass]
-    public class TestDalyChallenge27
+    public class TestDailyChallenge27
     {
         /*
          * For example, given the list of words ["the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"] and k = 16, you should return the following:
