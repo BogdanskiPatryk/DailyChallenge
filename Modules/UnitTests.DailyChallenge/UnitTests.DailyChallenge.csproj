@@ -70,6 +70,7 @@
     <Compile Include="TestDailyChallenge24.cs" />
     <Compile Include="TestDailyChallenge25.cs" />
     <Compile Include="TestDailyChallenge26.cs" />
+    <Compile Include="TestDailyChallenge29.cs" />
     <Compile Include="TestDailyChallenge3.cs" />
     <Compile Include="TestDailyChallenge5.cs" />
     <Compile Include="TestDailyChallenge4.cs" />
