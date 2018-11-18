@@ -64,6 +64,7 @@
     <Compile Include="DailyChallenge28.cs" />
     <Compile Include="DailyChallenge29.cs" />
     <Compile Include="DailyChallenge3.cs" />
+    <Compile Include="DailyChallenge30.cs" />
     <Compile Include="DailyChallenge4.cs" />
     <Compile Include="DailyChallenge5.cs" />
     <Compile Include="DailyChallenge6.cs" />
