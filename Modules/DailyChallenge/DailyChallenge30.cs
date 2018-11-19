@@ -23,15 +23,19 @@ Given two strings, compute the edit distance between them.
             if (strA.Last() == strB.Last())
             {
                 // We can ignore last characters
-                return Proceed(strA.Substring(0, strA.Length - 1), strB.Substring(0, strB.Length - 1));
+                return Proceed(RemoveLast(strA), RemoveLast(strB));
             }
             
-            int insert = Proceed(strA, strB.Substring(0, strB.Length - 1));
-            int remove = Proceed(strA.Substring(0, strA.Length - 1), strB);
-            int replace = Proceed(strA.Substring(0, strA.Length - 1), strB.Substring(0, strB.Length - 1));
+            int insert = Proceed(strA, RemoveLast(strB));
+            int remove = Proceed(RemoveLast(strA), strB);
+            int replace = Proceed(RemoveLast(strA), RemoveLast(strB));
             return 1 + Math.Min(Math.Min(insert, remove), replace);
         }
         
+        private string RemoveLast(string str)
+        {
+            return str.Substring(0, str.Length - 1);
+        }
     
     }
 }
