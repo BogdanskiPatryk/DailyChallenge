@@ -46,6 +46,24 @@ namespace UnitTests.DailyChallenge
                 }
             };
             Assert.AreEqual(13, daily.Proceed(root));
+
+            root = new Node
+            {
+                Value = 10,
+                Left = new Node
+                {
+                    Value = 8,
+                    Left = new Node()
+                    {
+                        Value = 7
+                    },
+                    Right = new Node()
+                    {
+                        Value = 9
+                    }
+                },
+            };
+            Assert.AreEqual(9, daily.Proceed(root));
         }
     }
 }

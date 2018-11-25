@@ -29,9 +29,19 @@ namespace DailyChallenge
             }
             else if (current.Left != null)
             {
-                secondLargest = current.Left;
-                return ProceedIntern(current.Left, secondLargest);
+                return ProceedInternAfterLeftJump(current.Left, secondLargest);
             }
+            return secondLargest;
+        }
+
+        private Node ProceedInternAfterLeftJump(Node current, Node secondLargest)
+        {
+            do
+            {
+                secondLargest = current;
+                current = current.Right;
+            }
+            while (current != null);
             return secondLargest;
         }
     }
