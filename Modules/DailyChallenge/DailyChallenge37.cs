@@ -13,7 +13,7 @@ namespace DailyChallenge
          * queens can be placed on the board without threatening each other, i.e. no two queens share the same row, column, or diagonal.
          */
 
-            class Point
+        class Point
         {
             public int X;
             public int Y;
