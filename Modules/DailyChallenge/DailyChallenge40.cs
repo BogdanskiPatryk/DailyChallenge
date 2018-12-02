@@ -15,28 +15,46 @@ Given the list of flights [('SFO', 'COM'), ('COM', 'YYZ')] and starting airport 
 Given the list of flights [('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'A')] and starting airport 'A', you should return the list ['A', 'B', 'C', 'A', 'C'] even though ['A', 'C', 'A', 'B', 'C'] is also a valid itinerary. However, the first one is lexicographically smaller.
          */
          
+        private class Path
+        {
+            public List<string> Ports;
+            public bool IsDeath;
+
+            public string Flat()
+            {
+                if (IsDeath)
+                {
+                    return string.Empty;
+                }
+                return string.Join("", Ports);
+            }
+        }
 
         public List<string> Proceed(IEnumerable<Tuple<string, string>> list, string start)
         {
-            List<List<string>> result = ProceedIntern(list.ToList(), start);
+            List<Path> result = ProceedIntern(list.ToList(), start);
             // remove deathends
-            result = result.Where(x => x.Any(f => f == null) == false).ToList();
-            return SelectList(result);
+            result = result.Where(x => x.IsDeath == false).ToList();
+            if (result.Any() == false)
+            {
+                return null;
+            }
+            return result.OrderBy(x => x.Flat()).First().Ports;
 
         }
 
-        private List<List<string>> ProceedIntern(List<Tuple<string,string>> list, string start)
+        private List<Path> ProceedIntern(List<Tuple<string,string>> list, string start)
         {
-            List<List<string>> result = new List<List<string>>();
+            List<Path> result = new List<Path>();
             if (list.Count == 1)
             {
                 if (start == list[0].Item1)
                 {
-                    result.Add(new List<string>() { list[0].Item1, list[0].Item2 });
+                    result.Add(new Path { Ports = new List<string>() { list[0].Item1, list[0].Item2 } });
                 }
                 else
                 {
-                    result.Add(new List<string>() { null });
+                    result.Add(new Path { IsDeath = true });
                 }
                 return result;
             }
@@ -45,35 +63,21 @@ Given the list of flights [('A', 'B'), ('A', 'C'), ('B', 'C'), ('C', 'A')] and s
                 var res = ProceedIntern(list.Except(new[] { tuple }).ToList(), tuple.Item2);
                 if (res.Any() == false)
                 {
-                    result.Add(new List<string>() { null });
+                    result.Add(new Path { IsDeath = true });
                 }
-                foreach (var list2 in res)
+                foreach (var p in res)
                 {
-                    List<string> flight = new List<string>()
+                    if (p.IsDeath)
                     {
-                        start
-                    };
-                    flight.AddRange(list2);
-                    result.Add(flight);
+                        result.Add(p);
+                        continue;
+                    }
+                    Path path = new Path() { Ports = new List<string>() { start } };
+                    path.Ports.AddRange(p.Ports);
+                    result.Add(path);
                 }
             }
             return result;
-        }
-
-        private List<string> SelectList(List<List<string>> lists)
-        {
-            if (lists.Any() == false)
-            {
-                return null;
-            }
-            List<Tuple<int, string>> res = new List<Tuple<int, string>>();
-            int i = 0;
-            foreach(var list in lists)
-            {
-                res.Add(new Tuple<int, string>(i, string.Join("", list)));
-            }
-            res = res.OrderBy(x => x.Item2).ToList();
-            return lists[res[0].Item1];
         }
     }
 }
