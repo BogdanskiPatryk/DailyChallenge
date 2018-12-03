@@ -76,6 +76,7 @@
     <Compile Include="DailyChallenge39.cs" />
     <Compile Include="DailyChallenge4.cs" />
     <Compile Include="DailyChallenge40.cs" />
+    <Compile Include="DailyChallenge41.cs" />
     <Compile Include="DailyChallenge5.cs" />
     <Compile Include="DailyChallenge6.cs" />
     <Compile Include="DailyChallenge7.cs" />
