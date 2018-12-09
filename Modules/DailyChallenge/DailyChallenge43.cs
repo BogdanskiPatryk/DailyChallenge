@@ -51,24 +51,24 @@ For example, a sorted list has zero inversions. The array [2, 4, 1, 3, 5] has th
                     inversions += (mid - onLeft);
                 }
             }
+            FixArrays(input, temp, left, mid, right, onLeft, onRight, mergedIndex);
+            return inversions;
+        }
 
+        private void FixArrays(int[] input, int[] temp, int left, int mid, int right, int onLeft,int onRight, int mergedIndex)
+        {
             while (onLeft <= mid - 1)
             {
                 temp[mergedIndex++] = input[onLeft++];
             }
-
             while (onRight <= right)
             {
                 temp[mergedIndex++] = input[onRight++];
             }
-
             for (onLeft = left; onLeft <= right; onLeft++)
             {
                 input[onLeft] = temp[onLeft];
             }
-
-            return inversions;
         }
-
     }
 }
