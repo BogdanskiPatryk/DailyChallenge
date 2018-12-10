@@ -23,6 +23,11 @@ namespace DailyChallenge
             rand += Rand5();
             rand += Rand5();
             rand += Rand5();
+            if (rand == 35)
+            {
+                // Again
+                return Proceed();
+            }
             return rand % 7 + 1;
         }
 
