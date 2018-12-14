@@ -18,7 +18,7 @@ Hint: Make sure each one of the 52! permutations of the deck is equally likely.
         {
             for(int i= 0; i < cards.Length; ++i)
             {
-                int index = PerfectRandom(cards.Length);
+                int index = PerfectRandom(cards.Length - 1);
                 int card = cards[index];
                 cards[index] = cards[0];
                 cards[0] = card;
