@@ -94,6 +94,7 @@
     <Compile Include="TestDailyChallenge5.cs" />
     <Compile Include="TestDailyChallenge4.cs" />
     <Compile Include="TestDailyChallenge51.cs" />
+    <Compile Include="TestDailyChallenge52.cs" />
     <Compile Include="TestDailyChallenge6.cs" />
     <Compile Include="TestDailyChallenge7.cs" />
     <Compile Include="TestDailyChallenge8.cs" />
