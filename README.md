@@ -1,10 +1,6 @@
 # DailyChallenge
 
-Zadania realizowane w ramach serii https://www.devmight.pl/category/dailychallenge/. 
-
-ZAZNACZAM, ŻE KOD W TYCH ZADANIACH JEST "PISANY NA KOLANIE", CELEM ZADANIA JEST NAPISANIE ALGORYTMU, A NIE DOPIESZCZANIE GO, DLATEGO KOD TRAKTUJ BARDZIEJ JAKO PROOF OF CONCEPT, NIŻ KOD PRODUKCYJNY. JAK JESTEŚ CIEKAWY, JAK TO ZROBIĆ DOBRZE, TO NAPISZ, PODEŚLĘ W PEŁNI PRODUKCYJNY KOD.
-
-Od poniedziałku do piątku, codziennie, o 7:30 publikuję na blogu rozwiązanie jednego zadania. Na GitHubie zadania pojawiają się zazwyczaj dzień wcześniej (mniewięcej koło 21).
+Uwaga: Kod ten w większości nie nadaje się na produkcję, gdyż brak w nim elementów takich jak np. walidacja danych wejściowych, obsługa błędów, IoC itp. itd.. Jest to po prostu rozwiązanie zadania "jak najszybciej".
 
 Zrealizowane zadania:
 
